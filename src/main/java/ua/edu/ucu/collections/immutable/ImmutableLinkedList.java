@@ -314,11 +314,7 @@ public class ImmutableLinkedList implements ImmutableList{
         }
         return new ImmutableLinkedList(newHeadNode);
     }// - видаляє перший елемент
-
-
-
-
-
+    
 public ImmutableLinkedList removeLast() {
     if (this.isEmpty()){
         throw new IndexOutOfBoundsException();
