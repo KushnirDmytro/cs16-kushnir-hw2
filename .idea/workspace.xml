@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0fb0c5b2-6efa-4f49-853a-90595bd48def" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableArrayList.java" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableArrayList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableLinkedList.java" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableLinkedList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableList.java" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableList.java" />
     </list>
     <ignored path="cs16kushnir-hw2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,27 +34,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImmutableLinkedList.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ImmutableLinkedList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="277" column="8" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="8" />
+            <state relative-caret-position="-168">
+              <caret line="336" column="26" selection-start-line="336" selection-start-column="26" selection-end-line="336" selection-end-column="26" />
               <folding>
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#690#691#0" expanded="true" />
-                <element signature="e#733#734#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-                <element signature="e#847#848#0" expanded="true" />
+                <element signature="e#641#642#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
+                <element signature="e#729#730#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#835#836#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
                 <element signature="method#getLastNode#0;class#ImmutableLinkedList#0" expanded="false" />
                 <element signature="method#add#0;class#ImmutableLinkedList#0" expanded="false" />
                 <element signature="method#addAll#0;class#ImmutableLinkedList#0" expanded="false" />
                 <element signature="method#addAll#1;class#ImmutableLinkedList#0" expanded="false" />
-                <element signature="method#remove#0;class#ImmutableLinkedList#0" expanded="false" />
-                <element signature="e#8860#8861#0" expanded="true" />
-                <element signature="e#8908#8909#0" expanded="true" />
-                <element signature="e#8978#8979#0" expanded="true" />
-                <element signature="e#9025#9026#0" expanded="true" />
+                <element signature="method#set#0;class#ImmutableLinkedList#0" expanded="false" />
+                <element signature="method#indexOf#0;class#ImmutableLinkedList#0" expanded="false" />
+                <element signature="method#addLast#0;class#ImmutableLinkedList#0" expanded="false" />
+                <element signature="method#toArray#0;class#ImmutableLinkedList#0" expanded="false" />
+                <element signature="method#toString#0;class#ImmutableLinkedList#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -74,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImmutableArrayList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImmutableArrayList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="123" column="30" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
+            <state relative-caret-position="646">
+              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
               <folding>
                 <element signature="e#208#209#0" expanded="true" />
                 <element signature="e#236#237#0" expanded="true" />
@@ -169,8 +167,8 @@
         <option value="$PROJECT_DIR$/src/test/java/ua/edu/ucu/collections/QueueTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ua/edu/ucu/collections/StackTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableLinkedList.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableArrayList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableLinkedList.java" />
       </list>
     </option>
   </component>
@@ -645,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478455513087</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="both Immutable done">
+      <created>1478509539764</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1478509539765</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -693,14 +698,15 @@
     <MESSAGE value="Need to create adequate copier to make new and old lists independant..." />
     <MESSAGE value="Abandoned idea of clonable interface (implementation of git-like structure)" />
     <MESSAGE value="Pretty much moving... making a break" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pretty much moving... making a break" />
+    <MESSAGE value="both Immutable done" />
+    <option name="LAST_COMMIT_MESSAGE" value="both Immutable done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableLinkedList.java</url>
-          <line>152</line>
+          <line>154</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -727,21 +733,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
             <element signature="method#getLastNode#0;class#ImmutableLinkedList#0" expanded="false" />
             <element signature="method#add#0;class#ImmutableLinkedList#0" expanded="false" />
             <element signature="method#addAll#0;class#ImmutableLinkedList#0" expanded="false" />
             <element signature="method#addAll#1;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="method#remove#0;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="e#8860#8861#0" expanded="true" />
-            <element signature="e#8908#8909#0" expanded="true" />
-            <element signature="e#8978#8979#0" expanded="true" />
-            <element signature="e#9025#9026#0" expanded="true" />
+            <element signature="method#set#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#indexOf#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#addLast#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#toArray#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#toString#0;class#ImmutableLinkedList#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -832,21 +838,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
             <element signature="method#getLastNode#0;class#ImmutableLinkedList#0" expanded="false" />
             <element signature="method#add#0;class#ImmutableLinkedList#0" expanded="false" />
             <element signature="method#addAll#0;class#ImmutableLinkedList#0" expanded="false" />
             <element signature="method#addAll#1;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="method#remove#0;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="e#8860#8861#0" expanded="true" />
-            <element signature="e#8908#8909#0" expanded="true" />
-            <element signature="e#8978#8979#0" expanded="true" />
-            <element signature="e#9025#9026#0" expanded="true" />
+            <element signature="method#set#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#indexOf#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#addLast#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#toArray#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#toString#0;class#ImmutableLinkedList#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -995,34 +1001,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="277" column="8" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="8" />
-          <folding>
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="method#getLastNode#0;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="method#add#0;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="method#addAll#0;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="method#addAll#1;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="method#remove#0;class#ImmutableLinkedList#0" expanded="false" />
-            <element signature="e#8860#8861#0" expanded="true" />
-            <element signature="e#8908#8909#0" expanded="true" />
-            <element signature="e#8978#8979#0" expanded="true" />
-            <element signature="e#9025#9026#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="123" column="30" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
+        <state relative-caret-position="646">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
           <folding>
             <element signature="e#208#209#0" expanded="true" />
             <element signature="e#236#237#0" expanded="true" />
@@ -1032,6 +1014,30 @@
             <element signature="e#3584#3585#0" expanded="true" />
             <element signature="e#3616#3617#0" expanded="true" />
             <element signature="e#3683#3684#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/edu/ucu/collections/immutable/ImmutableLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168">
+          <caret line="336" column="26" selection-start-line="336" selection-start-column="26" selection-end-line="336" selection-end-column="26" />
+          <folding>
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="method#getLastNode#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#add#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#addAll#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#addAll#1;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#set#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#indexOf#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#addLast#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#toArray#0;class#ImmutableLinkedList#0" expanded="false" />
+            <element signature="method#toString#0;class#ImmutableLinkedList#0" expanded="false" />
           </folding>
         </state>
       </provider>
