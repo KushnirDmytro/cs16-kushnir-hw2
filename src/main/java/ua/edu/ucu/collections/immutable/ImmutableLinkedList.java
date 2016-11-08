@@ -429,34 +429,4 @@ public ImmutableLinkedList removeLast() {
         stB.append(currentNode.data.toString());
         return stB.toString();
     }
-
-    /*
-    public static void main(String [] args){
-        ImmutableLinkedList test_list = new ImmutableLinkedList();
-        boolean test_bool = test_list.isEmpty();
-        System.out.println(test_bool);
-        int size = test_list.size();
-        System.out.println(size);
-        test_list = test_list.add("newNode");
-        size = test_list.size();
-        System.out.println(size);
-
-        test_list = test_list.add("newNode");
-        size = test_list.size();
-        System.out.println(size);
-
-        ImmutableLinkedList test_list2 = test_list.add("newNode2");
-        size = test_list2.size();
-
-        System.out.println(size);
-        size = test_list.size();
-        System.out.println(test_list2.isEmpty());
-
-
-        System.out.println(test_list.getLastNode().data);
-        System.out.println(test_list2.getLastNode().data);
-        System.out.println(test_list2.toArray());
-
-    }
-    */
 }

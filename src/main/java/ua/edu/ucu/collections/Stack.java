@@ -19,11 +19,11 @@ public class Stack {
 
     public Object pop(){
         Object rez = this.list.getLast();
-        this.list.removeLast();
+        this.list = this.list.removeLast();
         return rez;
     }
 
     public void push(Object e){
-        this.list.addLast(e);
+        this.list = this.list.addLast(e);
     }
 }

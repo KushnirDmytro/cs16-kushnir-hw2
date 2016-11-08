@@ -18,11 +18,11 @@ public class Queue {
 
     public Object dequeue(){
         Object rez = this.list.getFirst();
-        this.list.removeFirst();
+        this.list = this.list.removeFirst();
         return rez;
     }
 
     public void enqueue(Object e){
-        this.list.addLast(e);
+        this.list = this.list.addLast(e);
     }
 }
