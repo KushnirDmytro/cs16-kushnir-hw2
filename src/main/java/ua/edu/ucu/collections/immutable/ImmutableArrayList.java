@@ -5,7 +5,7 @@ public class ImmutableArrayList implements ImmutableList {
     //private final int size;
 
     public ImmutableArrayList(){
-        array = null;
+        array = new Object[0];
     }
 
     private ImmutableArrayList(Object[] array){
@@ -22,8 +22,8 @@ public class ImmutableArrayList implements ImmutableList {
         return new ImmutableArrayList(newArray);
     }
 
-    public ImmutableList add(int index, Object e) {
-        if (index >= this.size() - 1 || index < 0){
+    public ImmutableArrayList add(int index, Object e) {
+        if (index > this.size() - 1 || index < 0){
             throw new IndexOutOfBoundsException();
         }
         Object [] newArray = new Object[this.size() + 1];
@@ -33,7 +33,7 @@ public class ImmutableArrayList implements ImmutableList {
         return new ImmutableArrayList(newArray);
     }
 
-    public ImmutableList addAll(Object[] c) {
+    public ImmutableArrayList addAll(Object[] c) {
         if (this.isEmpty()){
             return new ImmutableArrayList(c);
         }
@@ -43,12 +43,19 @@ public class ImmutableArrayList implements ImmutableList {
         return new ImmutableArrayList(newArray);
     }
 
-    public ImmutableList addAll(int index, Object[] c) {
-        if (index >= this.size() - 1 || index < 0){
+    public ImmutableArrayList addAll(int index, Object[] c) {
+        if (index > this.size() -1|| index < 0){
+            if (index == 0){
+                ImmutableArrayList newList = new ImmutableArrayList();
+                for (Object k:c){
+                    newList = newList.add(k);
+                }
+                return newList;
+            }
             throw new IndexOutOfBoundsException();
         }
         if (this.isEmpty()){ //if get to this case -> index == 0
-        return new ImmutableArrayList(c);
+            return new ImmutableArrayList().addAll(c);
         }
         Object [] newArray = new Object[this.size() + c.length];
         System.arraycopy(this.array, 0, newArray, 0, index + 1);
@@ -58,14 +65,14 @@ public class ImmutableArrayList implements ImmutableList {
     }
 
     public Object get(int index) {
-        if (index >= this.size() - 1 || index < 0){
+        if (index > this.size() - 1 || index < 0){
             throw new IndexOutOfBoundsException();
         }
         return this.array[index];
     }
 
-    public ImmutableList remove(int index) {
-        if (index >= this.size() - 1 || index < 0){
+    public ImmutableArrayList remove(int index) {
+        if (index > this.size() - 1 || index < 0){
             throw new IndexOutOfBoundsException();
         }
         Object [] newArray = new Object[this.size() - 1];
@@ -74,8 +81,8 @@ public class ImmutableArrayList implements ImmutableList {
         return new ImmutableArrayList(newArray);
     }
 
-    public ImmutableList set(int index, Object e) {
-        if (index >= this.size() - 1 || index < 0){
+    public ImmutableArrayList set(int index, Object e) {
+        if (index > this.size() - 1 || index < 0){
             throw new IndexOutOfBoundsException();
         }
         Object [] newArray = new Object[this.size()];
@@ -99,7 +106,7 @@ public class ImmutableArrayList implements ImmutableList {
         return this.array.length;
     }
 
-    public ImmutableList clear() {
+    public ImmutableArrayList clear() {
         return new ImmutableArrayList(new Object [0]);
     }
 
@@ -123,4 +130,6 @@ public class ImmutableArrayList implements ImmutableList {
         }
         return stB.toString();
     }
+
+
 }
