@@ -103,47 +103,71 @@ public class ImmutableLinkedList implements ImmutableList{
                 currentOldNode = currentOldNode.nextNode;
             }
         currentNewNode.nextNode = new LinkedListNode(e);
-        ImmutableLinkedList res = new ImmutableLinkedList(newHeadNode); //for debugging needs
-        return res;
+        return new ImmutableLinkedList(newHeadNode);
     }
 
 
     public ImmutableLinkedList add(int index, Object e) {
-        if (index > this.length - 1 || index < 0){
+        if (index > this.size() - 1 || index < 0){
             throw new IndexOutOfBoundsException();
         }
-        if (this.isEmpty()) {
-            return new ImmutableLinkedList(new LinkedListNode(e));
+        if (this.isEmpty()){
+            throw new EmptyStackException();
         }
         int currentIndex = 0;
-        LinkedListNode currentNewNode = new LinkedListNode(this.headNode);
-        LinkedListNode newHeadNode = currentNewNode;
+        LinkedListNode currentNewNode;
         LinkedListNode currentOldNode = this.headNode;
-        while (currentOldNode.nextNode != null) {
-            if (index == currentIndex){
+        LinkedListNode newHeadNode = null;
+        if (index == 0){
+            currentNewNode = new LinkedListNode(e);
+            newHeadNode = currentNewNode;
+            currentNewNode.nextNode = new LinkedListNode(currentOldNode.data);
+            currentNewNode = currentNewNode.nextNode;
+            currentOldNode = currentOldNode.nextNode;
+            currentIndex++;
+        }
+        else{
+            currentNewNode = new LinkedListNode(currentOldNode.data);
+            currentIndex++;
+        }
+        if (newHeadNode == null) {
+            newHeadNode = currentNewNode;
+        }
+        while (currentOldNode != null && currentOldNode.nextNode != null) {
+            if (currentIndex == index){
                 currentNewNode.nextNode = new LinkedListNode(e);
                 currentNewNode = currentNewNode.nextNode;
+                currentIndex++;
             }
             currentIndex++;
             currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
             currentNewNode = currentNewNode.nextNode;
             currentOldNode = currentOldNode.nextNode;
         }
-        currentNewNode.nextNode = new LinkedListNode(e);
+        if (index == currentIndex){
+            currentNewNode.nextNode = new LinkedListNode(e);
+        }
         return new ImmutableLinkedList(newHeadNode);
     }
 
     public ImmutableLinkedList addAll(Object[] c) {
-        LinkedListNode currentNewNode = new LinkedListNode(this.headNode.data);
-        LinkedListNode newHeadNode = currentNewNode;
-        LinkedListNode currentOldNode = this.headNode;
+        LinkedListNode currentOldNode;
+        LinkedListNode currentNewNode;
+        LinkedListNode newHeadNode;
         if (this.isEmpty()) {
-            for (Object element :c){
-                currentNewNode.nextNode = new LinkedListNode(element);
-                currentNewNode = currentNewNode.nextNode;
+            currentNewNode = new LinkedListNode(c[0]);
+            newHeadNode = currentNewNode;
+            if (c.length > 1) {
+                for (int i = 1; i < c.length; i++) {
+                    currentNewNode.nextNode = new LinkedListNode(c[i]);
+                    currentNewNode = currentNewNode.nextNode;
+                }
             }
             return new ImmutableLinkedList(newHeadNode);
         }
+        currentOldNode = this.headNode;
+        currentNewNode = new LinkedListNode(currentOldNode);
+        newHeadNode = currentNewNode;
         while (currentOldNode.nextNode != null) {
             currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
             currentNewNode = currentNewNode.nextNode;
@@ -157,24 +181,27 @@ public class ImmutableLinkedList implements ImmutableList{
     }
 
     public ImmutableLinkedList addAll(int index, Object[] c) {
-        if (index >= this.length - 1 || index < 0){
+        if (index > this.length || index < 0){
             throw new IndexOutOfBoundsException();
         }
-        LinkedListNode currentNewNode = new LinkedListNode(this.headNode.data);
-        LinkedListNode newHeadNode = currentNewNode;
-        LinkedListNode currentOldNode = this.headNode;
         if (this.isEmpty()) {
             return addAll(c);
         }
+        LinkedListNode currentOldNode = this.headNode;
+        LinkedListNode currentNewNode = new LinkedListNode(currentOldNode);
+        LinkedListNode newHeadNode = currentNewNode;
         int currentIndex = 0;
-        while (currentOldNode.nextNode != null) {
-            if (index == currentIndex){
-                for (Object element :c){
-                    currentNewNode.nextNode = new LinkedListNode(element);
-                    currentNewNode = currentNewNode.nextNode;
-                }
-            }
+        while (currentIndex < index - 1 && currentOldNode.nextNode != null) {
+            currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
+            currentNewNode = currentNewNode.nextNode;
+            currentOldNode = currentOldNode.nextNode;
             currentIndex++;
+        }
+        for (Object element :c){
+            currentNewNode.nextNode = new LinkedListNode(element);
+            currentNewNode = currentNewNode.nextNode;
+        }
+        while (currentOldNode.nextNode != null) {
             currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
             currentNewNode = currentNewNode.nextNode;
             currentOldNode = currentOldNode.nextNode;
@@ -203,39 +230,68 @@ public class ImmutableLinkedList implements ImmutableList{
         if (index > this.size() - 1 || index < 0){
         throw new IndexOutOfBoundsException();
         }
+        if (this.isEmpty()){
+            throw new EmptyStackException();
+        }
         int currentIndex = 0;
-        LinkedListNode currentNewNode = new LinkedListNode(this.headNode.data);
-        LinkedListNode newHeadNode = currentNewNode;
+        LinkedListNode currentNewNode;
         LinkedListNode currentOldNode = this.headNode;
+        if (index == 0){
+            if (currentOldNode.nextNode != null){
+                currentOldNode = currentOldNode.nextNode;
+                currentIndex++;
+            }
+            else{
+                return new ImmutableLinkedList();
+            }
+        }
+        currentNewNode = new LinkedListNode(currentOldNode.data);
+        LinkedListNode newHeadNode = currentNewNode;
         while (currentOldNode.nextNode != null) {
-            if (index == currentIndex){
+            if (currentIndex == index - 1){
+                currentOldNode = currentOldNode.nextNode; //one step forward
+            }
+            if (currentOldNode.nextNode != null) {
+                currentIndex++;
+                currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
+                currentNewNode = currentNewNode.nextNode;
                 currentOldNode = currentOldNode.nextNode;
             }
-            currentIndex++;
-            currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
-            currentNewNode = currentNewNode.nextNode;
-            currentOldNode = currentOldNode.nextNode;
-        }
-        if (index == currentIndex){
-            currentOldNode = currentOldNode.nextNode;
         }
         return new ImmutableLinkedList(newHeadNode);
     }
 
 
     public ImmutableLinkedList set(int index, Object e) {
-        if (index >= this.size() - 1 || index < 0){
+        if (index > this.size() - 1 || index < 0){
             throw new IndexOutOfBoundsException();
         }
+        if (this.isEmpty()){
+            throw new EmptyStackException();
+        }
         int currentIndex = 0;
-        LinkedListNode currentNewNode = new LinkedListNode(this.headNode.data);
-        LinkedListNode newHeadNode = currentNewNode;
+        LinkedListNode currentNewNode;
         LinkedListNode currentOldNode = this.headNode;
+        LinkedListNode newHeadNode;
+        if (index == 0){
+            if (currentOldNode.nextNode != null){
+                currentOldNode = currentOldNode.nextNode;
+                currentNewNode = new LinkedListNode(e);
+                }
+            else{
+                return new ImmutableLinkedList(new LinkedListNode(e));
+            }
+        }
+        else{
+            currentNewNode = new LinkedListNode(currentOldNode.data);
+        }
+        newHeadNode = currentNewNode;
         while (currentOldNode.nextNode != null) {
-            if (index == currentIndex){
+            if (currentIndex == index - 1){
+                currentOldNode = currentOldNode.nextNode; //one step forward
                 currentNewNode.nextNode = new LinkedListNode(e);
                 currentNewNode = currentNewNode.nextNode;
-                currentOldNode = currentOldNode.nextNode;
+                continue;
             }
             currentIndex++;
             currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
@@ -270,6 +326,7 @@ public class ImmutableLinkedList implements ImmutableList{
         LinkedListNode currentNewNode = new LinkedListNode(e);
         LinkedListNode newHeadNode = currentNewNode;
         currentNewNode.nextNode = new LinkedListNode(this.headNode.data);
+        currentNewNode = currentNewNode.nextNode;
         LinkedListNode currentOldNode = this.headNode;
         while (currentOldNode.nextNode != null) {
             currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
@@ -311,22 +368,10 @@ public class ImmutableLinkedList implements ImmutableList{
         }
         return this.headNode.data;
     }
+
+
     public ImmutableLinkedList removeFirst() {
-        if (this.isEmpty()){
-        throw new IndexOutOfBoundsException();
-    }
-    if (this.size() == 1){
-        return new ImmutableLinkedList(new LinkedListNode());
-    }
-        LinkedListNode currentNewNode = new LinkedListNode(this.headNode.nextNode.data);
-        LinkedListNode newHeadNode = currentNewNode;
-        LinkedListNode currentOldNode = this.headNode.nextNode;
-        while (currentOldNode.nextNode != null) {
-            currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
-            currentNewNode = currentNewNode.nextNode;
-            currentOldNode = currentOldNode.nextNode;
-        }
-        return new ImmutableLinkedList(newHeadNode);
+        return this.remove(0);
     }// - видаляє перший елемент
 
 public ImmutableLinkedList removeLast() {
@@ -336,15 +381,14 @@ public ImmutableLinkedList removeLast() {
     if (this.size() == 1){
         return new ImmutableLinkedList(new LinkedListNode());
     }
-    LinkedListNode currentNewNode = new LinkedListNode(this.headNode.data);
-    LinkedListNode newHeadNode = currentNewNode;
     LinkedListNode currentOldNode = this.headNode;
-    while (currentOldNode.nextNode != null) {
-        currentNewNode.nextNode = new LinkedListNode(currentOldNode.data);
+    LinkedListNode currentNewNode = new LinkedListNode(currentOldNode.data);
+    LinkedListNode newHeadNode = currentNewNode;
+    while (currentOldNode.nextNode.nextNode != null) {
+        currentNewNode.nextNode = new LinkedListNode(currentOldNode.nextNode.data);
         currentNewNode = currentNewNode.nextNode;
         currentOldNode = currentOldNode.nextNode;
     }
-    currentNewNode = null;
     return new ImmutableLinkedList(newHeadNode);
 }// - видаляє останній елемент
 

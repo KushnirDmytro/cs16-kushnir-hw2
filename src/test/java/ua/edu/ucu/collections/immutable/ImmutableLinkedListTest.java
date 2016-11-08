@@ -27,7 +27,7 @@ public class ImmutableLinkedListTest {
         testList.add(testObject);
         Object testObject2 = "testStringIsAlsoObject2";
         ImmutableLinkedList testList2 = testList.add(0,testObject2);
-        assertEquals(testList2.toString(), "testStringIsAlsoObject2 testStringIsAlsoObject ");
+        assertEquals("testStringIsAlsoObject2 testStringIsAlsoObject", testList2.toString());
     }
 
     @Test (expected = IndexOutOfBoundsException.class)
@@ -109,7 +109,7 @@ public class ImmutableLinkedListTest {
             testLinked[i] = testObject;
         }
         ImmutableLinkedList testList = new ImmutableLinkedList().addAll(testLinked);
-        assertEquals(testList.toString(), "testStringIsAlsoObject testStringIsAlsoObject testStringIsAlsoObject ");
+        assertEquals(testList.toString(), "testStringIsAlsoObject testStringIsAlsoObject testStringIsAlsoObject");
     }
 
     @Test (expected = IndexOutOfBoundsException.class)
@@ -132,7 +132,7 @@ public class ImmutableLinkedListTest {
         }
         ImmutableLinkedList testList = new ImmutableLinkedList();
         testList = testList.addAll(0, testLinked);
-        assertEquals("testStringIsAlsoObject testStringIsAlsoObject testStringIsAlsoObject ", testList.toString());
+        assertEquals("testStringIsAlsoObject testStringIsAlsoObject testStringIsAlsoObject", testList.toString());
     }
 
     @Test
@@ -203,10 +203,80 @@ public class ImmutableLinkedListTest {
         testArray[0] = testObject;
         testArray[1] = testObject2;
         testArray[2] = testObject3;
-        ImmutableLinkedList testList1 = new ImmutableLinkedList().add(testObject);
-        testList1 = testList1.add(testObject2);
-        testList1 = testList1.add(testObject3);
+        ImmutableLinkedList testList1 = new ImmutableLinkedList().addAll(testArray);
         assertEquals(testString, testList1.toString());
+    }
+    @Test
+    public void addLastTest(){
+        Object testObject = "testStringIsAlsoObject";
+        Object testObject2 = "testStringIsAlsoObject2";
+        Object testObject3 = "testStringIsAlsoObject3";
+        String testString = testObject + " " + testObject2 + " " + testObject3;
+        ImmutableLinkedList testList1 = new ImmutableLinkedList().add(testObject);
+        testList1 = testList1.addLast(testObject2);
+        testList1 = testList1.addLast(testObject3);
+        assertEquals(testString, testList1.toString());
+    }
+    @Test
+    public void addFirstTest(){
+        Object testObject = "testStringIsAlsoObject";
+        Object testObject2 = "testStringIsAlsoObject2";
+        Object testObject3 = "testStringIsAlsoObject3";
+        String testString = testObject + " " + testObject2 + " " + testObject3;
+        ImmutableLinkedList testList1 = new ImmutableLinkedList().addFirst(testObject3);
+        testList1 = testList1.addFirst(testObject2);
+        testList1 = testList1.addFirst(testObject);
+        assertEquals(testString, testList1.toString());
+    }
+
+    @Test
+    public void getLastTest(){
+        Object testObject = "testStringIsAlsoObject";
+        Object testObject2 = "testStringIsAlsoObject2";
+        Object testObject3 = "testStringIsAlsoObject3";
+        Object [] testArray = new Object[3];
+        testArray[0] = testObject;
+        testArray[1] = testObject2;
+        testArray[2] = testObject3;
+        ImmutableLinkedList testList1 = new ImmutableLinkedList().addAll(testArray);
+        assertEquals(testObject3, testList1.getLast());
+    }
+
+    @Test
+    public void getFirstTest(){
+        Object testObject = "testStringIsAlsoObject";
+        Object testObject2 = "testStringIsAlsoObject2";
+        Object testObject3 = "testStringIsAlsoObject3";
+        Object [] testArray = new Object[3];
+        testArray[0] = testObject;
+        testArray[1] = testObject2;
+        testArray[2] = testObject3;
+        ImmutableLinkedList testList1 = new ImmutableLinkedList().addAll(testArray);
+        assertEquals(testObject, testList1.getFirst());
+    }
+
+    @Test
+    public void removeFirstTest(){
+        Object testObject = "testStringIsAlsoObject";
+        Object testObject2 = "testStringIsAlsoObject2";
+        Object [] testArray = new Object[2];
+        testArray[0] = testObject;
+        testArray[1] = testObject2;
+        ImmutableLinkedList testList1 = new ImmutableLinkedList().addAll(testArray);
+        ImmutableLinkedList testList2 = testList1.removeFirst();
+        assertEquals(testObject2.toString(), testList2.toString());
+    }
+
+    @Test
+    public void removeLastTest(){
+        Object testObject = "testStringIsAlsoObject";
+        Object testObject2 = "testStringIsAlsoObject2";
+        Object [] testArray = new Object[2];
+        testArray[0] = testObject;
+        testArray[1] = testObject2;
+        ImmutableLinkedList testList1 = new ImmutableLinkedList().addAll(testArray);
+        ImmutableLinkedList testList2 = testList1.removeLast();
+        assertEquals(testObject.toString(), testList2.toString());
     }
 
 }
