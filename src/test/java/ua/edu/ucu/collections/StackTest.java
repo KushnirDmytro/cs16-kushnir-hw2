@@ -4,6 +4,7 @@ package test.java.ua.edu.ucu.collections;
 import main.java.ua.edu.ucu.collections.Stack;
 import main.java.ua.edu.ucu.collections.immutable.ImmutableLinkedList;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class StackTest {
@@ -39,5 +40,5 @@ public class StackTest {
     @Test
     public void testSomeMethod() {
     }
-    
+
 }

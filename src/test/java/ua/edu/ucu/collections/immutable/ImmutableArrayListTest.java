@@ -10,13 +10,13 @@ import static org.junit.Assert.*;
 public class ImmutableArrayListTest {
 
     @Test //(expected = NullPointerException.class)
-    public void emptyConstructorTest(){
+    public void emptyConstructorTest() {
         ImmutableArrayList testList = new ImmutableArrayList();
         assertEquals(testList.size(), 0);
     }
 
     @Test
-    public void addTest(){
+    public void addTest() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList = new ImmutableArrayList().add(testObject);
         assertEquals(testList.toString(), "testStringIsAlsoObject ");
@@ -24,28 +24,28 @@ public class ImmutableArrayListTest {
 
 
     @Test
-    public void indexAddTest(){
+    public void indexAddTest() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList = new ImmutableArrayList().add(testObject);
         testList.add(testObject);
         Object testObject2 = "testStringIsAlsoObject2";
-        ImmutableArrayList testList2 = testList.add(0,testObject2);
+        ImmutableArrayList testList2 = testList.add(0, testObject2);
         assertEquals(testList2.toString(), "testStringIsAlsoObject2 testStringIsAlsoObject ");
     }
 
-    @Test (expected = IndexOutOfBoundsException.class)
-    public void indexAddTestExeptin(){
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void indexAddTestExeptin() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList = new ImmutableArrayList().add(testObject);
         testList.add(testObject);
         Object testObject2 = "testStringIsAlsoObject2";
-        ImmutableArrayList testList2 = testList.add(5,testObject2);
+        ImmutableArrayList testList2 = testList.add(5, testObject2);
         //assertEquals(testList.toString(), "testStringIsAlsoObject ");
     }
 
 
     @Test
-    public void sizeTest(){
+    public void sizeTest() {
         Object testObject = "testStringIsAlsoObject";
         Object testObject2 = "testStringIsAlsoObject2";
         ImmutableArrayList testList1 = new ImmutableArrayList().add(testObject);
@@ -55,7 +55,7 @@ public class ImmutableArrayListTest {
     }
 
     @Test
-    public void setTest(){
+    public void setTest() {
         Object testObject = "testStringIsAlsoObject";
         Object testObject2 = "testStringIsAlsoObject2";
         ImmutableArrayList testList1 = new ImmutableArrayList().add(testObject);
@@ -63,8 +63,8 @@ public class ImmutableArrayListTest {
         assertEquals(testObject2, testList2.get(0));
     }
 
-    @Test (expected = IndexOutOfBoundsException.class)
-    public void setTestExeption(){
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void setTestExeption() {
         Object testObject = "testStringIsAlsoObject";
         Object testObject2 = "testStringIsAlsoObject2";
         ImmutableArrayList testList1 = new ImmutableArrayList().add(testObject);
@@ -74,7 +74,7 @@ public class ImmutableArrayListTest {
 
 
     @Test
-    public void indexOfTest(){
+    public void indexOfTest() {
         Object testObject = "testStringIsAlsoObject";
         Object testObject2 = "testStringIsAlsoObject2";
         Object testObject3 = "testStringIsAlsoObject3";
@@ -87,7 +87,7 @@ public class ImmutableArrayListTest {
 
 
     @Test
-    public void clearTest(){
+    public void clearTest() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList1 = new ImmutableArrayList().add(testObject);
         testList1 = testList1.clear();
@@ -96,7 +96,7 @@ public class ImmutableArrayListTest {
     }
 
     @Test
-    public void isEmptyTest(){
+    public void isEmptyTest() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList1 = new ImmutableArrayList().add(testObject);
         assertEquals(testList1.isEmpty(), false);
@@ -105,21 +105,21 @@ public class ImmutableArrayListTest {
     }
 
     @Test
-    public void indexAddAllTest(){
-        Object [] testArray = new Object[3];
+    public void indexAddAllTest() {
+        Object[] testArray = new Object[3];
         Object testObject = "testStringIsAlsoObject";
-        for (int i  = 0 ; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             testArray[i] = testObject;
         }
         ImmutableArrayList testList = new ImmutableArrayList().addAll(testArray);
         assertEquals(testList.toString(), "testStringIsAlsoObject testStringIsAlsoObject testStringIsAlsoObject ");
     }
 
-    @Test (expected = IndexOutOfBoundsException.class)
-    public void indexAddAllIndexTestExeption(){
-        Object [] testArray = new Object[3];
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void indexAddAllIndexTestExeption() {
+        Object[] testArray = new Object[3];
         Object testObject = "testStringIsAlsoObject";
-        for (int i  = 0 ; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             testArray[i] = testObject;
         }
         ImmutableArrayList testList = new ImmutableArrayList().addAll(3, testArray);
@@ -127,10 +127,10 @@ public class ImmutableArrayListTest {
     }
 
     @Test
-    public void indexAddAllIndexTest(){
-        Object [] testArray = new Object[3];
+    public void indexAddAllIndexTest() {
+        Object[] testArray = new Object[3];
         Object testObject = "testStringIsAlsoObject";
-        for (int i  = 0 ; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             testArray[i] = testObject;
         }
         ImmutableArrayList testList = new ImmutableArrayList();
@@ -139,30 +139,29 @@ public class ImmutableArrayListTest {
     }
 
     @Test
-    public void getTest(){
+    public void getTest() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList = new ImmutableArrayList().add(testObject);
         assertEquals(testList.get(0), testObject);
     }
 
-    @Test (expected = IndexOutOfBoundsException.class)
-    public void getTestExeption(){
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void getTestExeption() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList = new ImmutableArrayList().add(testObject);
         assertEquals(testList.get(4), testObject);
     }
 
 
-
-    @Test (expected = IndexOutOfBoundsException.class)
-    public void removeTestExeption(){
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void removeTestExeption() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList = new ImmutableArrayList().add(testObject);
         testList.remove(2);
     }
 
     @Test
-    public void removeTest(){
+    public void removeTest() {
         Object testObject = "testStringIsAlsoObject";
         ImmutableArrayList testList1 = new ImmutableArrayList().add(testObject);
         ImmutableArrayList testList3 = testList1;
@@ -172,36 +171,33 @@ public class ImmutableArrayListTest {
     }
 
 
-
     @Test
-    public void toArrayTest(){
+    public void toArrayTest() {
         Object testObject = "testStringIsAlsoObject";
         Object testObject2 = "testStringIsAlsoObject2";
         Object testObject3 = "testStringIsAlsoObject3";
-        Object [] testArray = new Object[3];
+        Object[] testArray = new Object[3];
         testArray[0] = testObject;
         testArray[1] = testObject2;
         testArray[2] = testObject3;
         ImmutableArrayList testList1 = new ImmutableArrayList().add(testObject);
         testList1 = testList1.add(testObject2);
         testList1 = testList1.add(testObject3);
-        int index= 0;
-        for (Object c: testList1.toArray()){
+        int index = 0;
+        for (Object c : testList1.toArray()) {
             assertEquals(testArray[index], c);
             ++index;
         }
     }
 
 
-
-
     @Test
-    public void toStringTest(){
+    public void toStringTest() {
         Object testObject = "testStringIsAlsoObject";
         Object testObject2 = "testStringIsAlsoObject2";
         Object testObject3 = "testStringIsAlsoObject3";
         String testString = testObject + " " + testObject2 + " " + testObject3 + " ";
-        Object [] testArray = new Object[3];
+        Object[] testArray = new Object[3];
         testArray[0] = testObject;
         testArray[1] = testObject2;
         testArray[2] = testObject3;
@@ -217,5 +213,5 @@ public class ImmutableArrayListTest {
     @Test
     public void testSomeMethod() {
     }
-    
+
 }
